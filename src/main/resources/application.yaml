@@ -1,0 +1,57 @@
+
+spring:
+  application:
+    name: ttm-template
+
+  # Cloud Configuration
+  cloud:
+    config:
+      enabled: false
+
+  # Datasource Configuration
+  datasource:
+    url: jdbc:h2:mem:ttm-db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # H2 Console Configuration
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # JPA Configuration (Java Persistence API)
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Server Configuration
+server:
+  port: 8080
+
+  # SpringDoc Configuration (pour Swagger)
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+# Eureka Client Configuration
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    enabled: false
+
+
+
+
+
